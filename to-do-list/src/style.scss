@@ -1,40 +1,200 @@
-body {
-
-}
-
-.appInfo {
-  
+header {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  gap: 1rem;
+  padding: 5px;
+  background-color: orange;
+  width: 159.5rem;
+  position: relative;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  align-items: center;
 }
 
 #appName {
   font-size: 2.5em;
   position: relative;
   left: 1rem;
-  
+  color: white;
+  margin-right: auto;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  right: 1rem;
+  top: 0.2rem;
+  border-color: orange;
+  border-radius: 10px;
+  border-style: solid;
+  color:orange;
+  justify-content: center;
+}
+
+.navigation:hover {
+  background-color: orangered;
+}
+
+body {
+  overflow: hidden;
+}
+
+#mainContainer {
+  display: grid;
+  grid-template-columns: minmax(30%, 1fr), minmax(100px, 1fr);
+  grid-template-rows: minmax(30%, 1fr), 2fr;
 }
 
 #cta {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top:20%;
-    left: 32%;
-  }
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  gap: 2rem;
+  left: 30.5%;
+}
 
 #caption {
-    position: relative;
-    bottom: 0.5em;
-    font-size:2em;
+  position: relative;
+  bottom: 0.5%;
+  font-size: 2em;
 }
 
 #noWorry {
-    font-size: 1.8em;
-    position:relative;
-    bottom: 0.5em;
+  font-size: 1.8em;
+  position: relative;
+  bottom: 0.5em;
 }
 
 #getStarted {
-    padding:1em;
-    
+  padding: 1em;
+  font-family: "Inter", sans-serif;
+  background-color: orange;
+  border-color: orange;
+  position: relative;
+  bottom: 1rem;
+  left: 0.2rem;
+  border-style: solid;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+#getStarted:hover {
+  background-color: orangered;
+  border-color: orangered;
+}
+
+#to-do-list-img {
+  height: auto;
+  width: 52rem;
+  position: relative;
+  left: 56rem;
+  top: 35rem;
+}
+
+#copyright {
+  background-color: orange;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 35rem;
+  right: 2rem;
+  width: 166rem;
+  color: white;
+}
+
+#signUpPage {
+  background-color: orange;
+}
+
+#signUpHeader {
+  padding: 35px;
+  display: flex;
+  background-color: orange;
+  justify-content: end;
+}
+
+.signUpNav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  right: 3rem;
+  top: 0.2rem;
+  border-color: white;
+  background-color: white;
+  border-radius: 10px;
+  border-style: solid;
+  justify-content: center;
+}
+
+#introduction {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  background-color: white;
+  padding: 500px;
+  bottom:0.01%;
+  border-style:solid;
+  border-color:white;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  left: 38.8%;
+  width: 35rem;
+  height: 30%;
+  gap: 2.5rem;
+}
+
+#signUp {
+
+}
+
+.asterisk {
+  color: red;
+}
+
+#submitInfo {
+  background-color: black;
+  border-color:black;
+  border-style:solid;
+  color:white;
+  padding: 10px;
+  border-radius:20px;
+  width:25rem;
+  font-family: "Inter", sans-serif;
+  font-size:1.3em;
+}
+
+#alreadyHaveAccount {
+  position:relative;
+  bottom:1.5rem;
+}
+
+#signUpImage {
+  width:60.3rem;
+  height:auto; 
+  padding:20px;
+  border-color:white;
 }
