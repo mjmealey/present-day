@@ -1,174 +1,202 @@
-header {
-  display: flex;
-  font-family: "Inter", sans-serif;
-  gap: 1rem;
-  padding: 5px;
-  background-color: orange;
-  width: 159.5rem;
-  position: relative;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  align-items: center;
-}
-
-#appName {
-  font-size: 2.5em;
-  position: relative;
-  left: 1rem;
-  color: white;
-  margin-right: auto;
-}
-
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 15px;
-  background-color: white;
-  font-family: "Inter", sans-serif;
-  position: relative;
-  right: 1rem;
-  top: 0.2rem;
-  border-color: orange;
-  border-radius: 10px;
-  border-style: solid;
-  color:orange;
-  justify-content: center;
-}
-
-.navigation:hover {
-  background-color: orangered;
-}
+$mainColor: white;
+$secondaryColor: orange;
+$thirdColor: black;
+$submitHover: grey;
+$mainFont: "Inter", sans-serif;
+$formFont: "Open Sans", sans-serif;
+$mainDisplay: flex;
+$primaryPositioning: relative;
+$secondaryPositioning: absolute;
+$centerContent: center;
+$moveContentToEnd: end;
+$flexColumn: column;
+$primaryBorderStyle: solid;
 
 body {
   overflow: hidden;
 }
 
-#mainContainer {
-  display: grid;
-  grid-template-columns: minmax(30%, 1fr), minmax(100px, 1fr);
-  grid-template-rows: minmax(30%, 1fr), 2fr;
+.toDoHeader {
+  display: $mainDisplay;
+  font-family: $mainFont;
+  gap: 1rem;
+  padding: 10px;
+  background-color: $mainColor;
+}
+
+.appName {
+  margin-right: auto;
+  color: $secondaryColor;
+  font-size: 1.8em;
+}
+
+.nav {
+  display: $mainDisplay;
+  flex-wrap: wrap;
+  align-items: $centerContent;
+  padding: 15px;
+  background-color: $mainColor;
+  font-family: $mainFont;
+  position: $primaryPositioning;
+  right: 1rem;
+  top: 0.2rem;
+  height: 4rem;
+  height: 3rem;
+  font-size: 0.9em;
+  border-color: $secondaryColor;
+  border-radius: 10px;
+  border-style: $primaryBorderStyle;
+  color: $secondaryColor;
+  justify-content: $centerContent;
+}
+
+.nav:hover {
+  background-color: $thirdColor;
 }
 
 #cta {
-  display: flex;
-  flex-direction: column;
+  display: $mainDisplay;
+  flex-direction:$flexColumn;
   grid-column: 2;
-  font-family: "Inter", sans-serif;
-  align-items: center;
-  position: absolute;
+  font-family: $mainFont;
+  align-items: $centerContent;
+  position: $secondaryPositioning;
   top: 20%;
   gap: 2rem;
-  left: 30.5%;
+  left: 31%;
 }
 
 #caption {
-  position: relative;
+  position: $primaryPositioning;
   bottom: 0.5%;
   font-size: 2em;
 }
 
 #noWorry {
   font-size: 1.8em;
-  position: relative;
+  position: $primaryPositioning;
   bottom: 0.5em;
 }
 
 #getStarted {
   padding: 1em;
-  font-family: "Inter", sans-serif;
-  background-color: orange;
-  border-color: orange;
-  position: relative;
+  font-family: $mainFont;
+  background-color: orangered;
+  border-color: orangered;
+  position: $primaryPositioning;
   bottom: 1rem;
   left: 0.2rem;
-  border-style: solid;
-  color: white;
+  border-style: $primaryBorderStyle;
+  color: $mainColor;
   padding: 20px;
   border-radius: 10px;
   font-size: 1.2em;
 }
 
 #getStarted:hover {
-  background-color: orangered;
-  border-color: orangered;
+  background-color: $secondaryColor;
+  border-color: $secondaryColor;
 }
 
 #to-do-list-img {
   height: auto;
   width: 52rem;
-  position: relative;
+  position: $primaryPositioning;
   left: 56rem;
   top: 35rem;
 }
 
-#copyright {
-  background-color: orange;
+.copyright {
+  background-color: $secondaryColor;
   padding: 10px;
-  display: flex;
-  justify-content: center;
-  position: relative;
+  display: $mainDisplay;
+  justify-content: $centerContent;
+  position: $primaryPositioning;
   top: 35rem;
   right: 2rem;
   width: 166rem;
-  color: white;
+  color: $mainColor;
+}
+
+#mainCopyright {
+  position: $primaryPositioning;
+  top: 35.8rem;
 }
 
 #signUpPage {
-  background-color: orange;
-}
-
-#signUpHeader {
-  padding: 35px;
-  display: flex;
-  background-color: orange;
-  justify-content: end;
-}
-
-.signUpNav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 15px;
-  font-family: "Inter", sans-serif;
-  position: relative;
-  right: 3rem;
-  top: 0.2rem;
-  border-color: white;
   background-color: white;
-  border-radius: 10px;
-  border-style: solid;
-  justify-content: center;
 }
 
 #introduction {
-  position:relative;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: $primaryPositioning;
+  display: $mainDisplay;
+  flex-direction: $flexColumn;
+  justify-content: $centerContent;
+  align-items: $centerContent;
 }
 
 #signUpForm {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  justify-content: center;
-  background-color: white;
-  padding: 500px;
-  bottom:0.01%;
-  border-style:solid;
-  border-color:white;
-  font-family: "Inter", sans-serif;
-  align-items: center;
-  left: 38.8%;
+  display: $mainDisplay;
+  flex-direction: $flexColumn;
+  position: $secondaryPositioning;
+  justify-content: $centerContent;
+  background-color: $mainColor;
+  padding: 100px;
+  border-radius: 20px;
+  bottom: 35%;
+  border-style: $primaryBorderStyle;
+  border-color: $mainColor;
+  font-family: $formFont;
+  align-items: $centerContent;
+  left: 35%;
   width: 35rem;
   height: 30%;
-  gap: 2.5rem;
+  gap: 3rem;
+}
+
+.signUpLogo {
+  position: $primaryPositioning;
+  top: 3rem;
+  left: 0.9rem;
 }
 
 #signUp {
+  font-size: 2.5em;
+  color: $thirdColor;
+  position: $primaryPositioning;
+  right: 0.4rem;
+  top: 4rem;
+}
 
+#signUpContainer {
+  display: $mainDisplay;
+  flex-direction: $flexColumn;
+  gap: 30px;
+}
+
+.label {
+  position: $primaryPositioning;
+  top: 1.1rem;
+  left: 1rem;
+  font-weight: lighter;
+}
+
+.input {
+  position: $primaryPositioning;
+  width: 27rem;
+  padding: 15px;
+  left: 1rem;
+}
+
+#setPassword {
+  position: $primaryPositioning;
+}
+
+#slogan {
+  color: $thirdColor;
+  font-size: 1.5em;
+  position: $primaryPositioning;
+  bottom: 1rem;
 }
 
 .asterisk {
@@ -176,25 +204,36 @@ body {
 }
 
 #submitInfo {
-  background-color: black;
-  border-color:black;
-  border-style:solid;
-  color:white;
-  padding: 10px;
-  border-radius:20px;
-  width:25rem;
-  font-family: "Inter", sans-serif;
-  font-size:1.3em;
+  background-color: $thirdColor;
+  border-color: $thirdColor;
+  border-style: $primaryBorderStyle;
+  color: white;
+  padding: 15px;
+  width: 29.5rem;
+  position: $primaryPositioning;
+  left: 3.5%;
+  top:0.5rem;
+  font-family: $mainFont;
+  font-size: 1.3em;
+}
+
+#submitInfo:hover {
+  background-color: $submitHover;
+  border-color: $submitHover;
 }
 
 #alreadyHaveAccount {
-  position:relative;
-  bottom:1.5rem;
+  position: $primaryPositioning;
+  left: 1rem;
+  bottom: 2.5rem;
 }
 
-#signUpImage {
-  width:60.3rem;
-  height:auto; 
-  padding:20px;
-  border-color:white;
+#copyrightSignUp {
+  background-color: $secondaryColor;
+  display: $mainDisplay;
+  justify-content: $centerContent;
+  width: 163rem;
+  align-items: $centerContent;
+  position: $primaryPositioning;
+  top: 76.5rem;
 }
