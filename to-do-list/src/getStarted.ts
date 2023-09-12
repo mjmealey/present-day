@@ -1,2 +1,7 @@
-import { setEmail } from "./htmlElements/inputs.js"
-import { emailError } from "./htmlElements/errorMessage.js"
+import SetEmail from "./modules/SetEmail.js";
+
+const getStarted = () => {
+    SetEmail()
+}
+
+getStarted()
