@@ -188,6 +188,12 @@ body {
   left: 1rem;
 }
 
+#emailError {
+  position:relative;
+  left: 1rem;
+  color: red;
+}
+
 #setPassword {
   position: $primaryPositioning;
 }
