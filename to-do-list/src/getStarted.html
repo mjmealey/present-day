@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../dist/getStarted.js"></script>
     <link rel="stylesheet" href="style.scss" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +26,8 @@
       </section>
       <section id="signUpContainer">
         <label for="setEmail" class="label"> Email </label>
-        <input id="setEmail" class="input">
+        <input id="setEmail" class="input" pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$ ">
+        <div id="emailError"></div>
         <label for="setUsername" class="label"> Username </label>
         <input
           type="text"
