@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../dist/getStarted.js"></script>
+    <link rel="stylesheet" href="style.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Open+Sans&family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <title>Start Living in the Present Day Today!</title>
+  </head>
+  <header class="toDoHeader">
+    <h1 class="appName">Present Day</h1>
+    <button class="nav">Login</button>
+    <button class="nav">Contact</button>
+  </header>
+  <body id="signUpPage">
+    <form id="signUpForm">
+      <section id="introduction">
+        <h2 class="signUpLogo" id="signUp">Sign Up</h2>
+        <h3 class="signUpLogo" id="slogan">Start Managing Your Anxiety Today!</h3>
+      </section>
+      <section id="signUpContainer">
+        <label for="setEmail" class="label"> Email </label>
+        <input id="setEmail" class="input" required>
+        <div id="emailError"></div>
+        <label for="setUsername" class="label"> Username </label>
+        <input
+          type="text"
+          id="setUsername"
+          class="input"
+          minlength="8"
+          required
+        />
+
+        <label for="setPassword" id="signUpPasswordLabel" class="label">
+          Password
+        </label>
+        <input
+          type="password"
+          id="setPassword"
+          class="input"
+          minlength="10"
+          required
+        />
+      </section>
+      <button type="button" id="submitInfo">Sign Up</button>
+      <h3 id="alreadyHaveAccount">Already have an account? Login here!</h3>
+    </form>
+
+    <footer class="copyright" id="copyrightSignUp">
+      <h4>&copy; Jake Mealey 2023</h4>
+      <h5>&nbsp; Disclaimer: Not a real signup page</h5>
+    </footer>
+  </body>
+</html>
