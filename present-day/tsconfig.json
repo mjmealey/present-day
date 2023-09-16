@@ -4,16 +4,17 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-
+    "typeRoots": ["./types", "./node_modules/@types"],
     /* Bundler mode */
     "isolatedModules": true,
     "outDir": "dist",
+    
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "types": ["vite/client"],
+    "types": ["node"],
     "noFallthroughCasesInSwitch": true
   },
   "include": ["./src"]
