@@ -1,5 +1,7 @@
 //form id
-export const signUpForm = document.getElementById("signUpForm") as HTMLFormElement
+export const signUpForm = document.getElementById(
+  "signUpForm"
+) as HTMLFormElement;
 
 //email Ids
 export const setEmail = document.getElementById("setEmail") as HTMLInputElement;
