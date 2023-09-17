@@ -1,7 +1,26 @@
 import { EmailErrorMessages } from "../enums/ErrorMessages.js";
 import { EmailLength } from "../enums/FormElementsLength.js";
 
-export const formState = {
+interface FormState {
+  noErrors: string;
+  emptyField: string;
+  email: {
+    errorMessages: {
+      invalidPattern: string;
+      emptyField: string;
+      overCharacterLimit: string;
+      underCharacterLimit: string;
+      doesNotMatch: string;
+    };
+
+    length: {
+      minLength: number; 
+      maxLength: number;
+    };
+  };
+}
+
+export const formState: FormState = {
   noErrors: "",
   emptyField: "",
   email: {
@@ -10,6 +29,7 @@ export const formState = {
       emptyField: EmailErrorMessages.emptyField,
       overCharacterLimit: EmailErrorMessages.overCharacterLimit,
       underCharacterLimit: EmailErrorMessages.underCharacterLimit,
+      doesNotMatch: EmailErrorMessages.doesNotMatch,
     },
 
     length: {
