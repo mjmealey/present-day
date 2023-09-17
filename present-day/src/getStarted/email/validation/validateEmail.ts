@@ -1,5 +1,5 @@
 import { ValidatePattern } from "./ValidatePattern.js";
 
-const validateEmail = () => {
-  
+export const validateEmail = () => {
+
 }
