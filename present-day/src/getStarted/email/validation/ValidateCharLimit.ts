@@ -10,9 +10,9 @@ const ValidateCharLimit = () => {
     const focusOnLocal: number = setEmail.value.indexOf("@");
     const isAtSymbolIncluded: boolean = focusOnLocal !== -1;
     if (isAtSymbolIncluded) {
-      const local: string[] = setEmail.value.split("@");
-      const minLength: number = length.minLength;
-      const isUnderMinLength: boolean = local[0].length <= minLength;
+      const local: string = setEmail.value.split("@")[0];
+      const minLength: number = length.minLengthPreAtSymbol;
+      const isUnderMinLength: boolean = local.length <= minLength;
       if (isUnderMinLength) {
         displayErrors(emailError);
         const underLocalMinLengthError: string =
@@ -20,6 +20,21 @@ const ValidateCharLimit = () => {
         emailError.innerText = underLocalMinLengthError;
       } else {
         removeErrors(emailError);
+      }
+    }
+  };
+
+  const validateDomainMinCharLimit = () => {
+    const focusOnDomain: number = setEmail.value.indexOf(".");
+    const isDotIncluded: boolean = focusOnDomain !== -1;
+    if (isDotIncluded) {
+      const doesContainAtSymbol = setEmail.value.split("@")[1];
+      const domain: string = doesContainAtSymbol.split(".")[0];
+      const domainMinLength = length.domainMinLength;
+      const isUnderMinLength = domain.length <= domainMinLength;
+      if (isUnderMinLength) {
+        displayErrors(emailError);
+        emailError.innerText = errorMessage.underCharacterLimitForDomain;
       }
     }
   };
@@ -35,6 +50,12 @@ const ValidateCharLimit = () => {
       removeErrors(emailError);
     }
   };
+
+  setEmail.addEventListener("click", () => {
+    validateLocalMinCharLimit()
+    validateDomainMinCharLimit()
+    validateMaxCharLimit()
+  })
 };
 
 export default ValidateCharLimit;
