@@ -1,1 +1,0 @@
-export const emailError = document.getElementById("emailError")
