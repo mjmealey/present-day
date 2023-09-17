@@ -10,11 +10,12 @@ interface FormState {
       emptyField: string;
       overCharacterLimit: string;
       underCharacterLimit: string;
+      underCharacterLimitPreAtSymbol: string;
       doesNotMatch: string;
     };
 
     length: {
-      minLength: number; 
+      minLength: number;
       maxLength: number;
     };
   };
@@ -29,12 +30,18 @@ export const formState: FormState = {
       emptyField: EmailErrorMessages.emptyField,
       overCharacterLimit: EmailErrorMessages.overCharacterLimit,
       underCharacterLimit: EmailErrorMessages.underCharacterLimit,
+      underCharacterLimitPreAtSymbol:
+        EmailErrorMessages.underCharacterLimitPreAtSymbol,
       doesNotMatch: EmailErrorMessages.doesNotMatch,
     },
 
     length: {
-      minLength: EmailLength.minLength,
+      minLength: EmailLength.localMinLength,
       maxLength: EmailLength.maxLength,
     },
   },
 };
+
+export const length = formState.email.length
+export const errorMessage = formState.email.errorMessages
+
