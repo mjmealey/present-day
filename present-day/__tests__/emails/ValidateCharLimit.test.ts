@@ -11,8 +11,9 @@ describe("ValidateCharLimit", () => {
     ];
 
     validEmails.forEach((index: string) => {
-      const local: string = index.split("@")[0];
-      expect(local.length).toBeGreaterThanOrEqual(minLocalLength);
+      const validLocal: string = index.split("@")[0];
+      const validLocalLength: number = validLocal.length
+      expect(validLocalLength).toBeGreaterThanOrEqual(minLocalLength);
     });
 
     const invalidEmails: string[] = [
@@ -23,8 +24,9 @@ describe("ValidateCharLimit", () => {
     ];
 
     invalidEmails.forEach((index: string) => {
-      const local: string = index.split("@")[0];
-      expect(local.length).toBeLessThanOrEqual(minLocalLength);
+      const invalidLocal: string = index.split("@")[0];
+      const invalidLocalLength: number = invalidLocal.length
+      expect(invalidLocalLength).toBeLessThanOrEqual(minLocalLength);
     });
   });
 
@@ -38,13 +40,10 @@ describe("ValidateCharLimit", () => {
     ];
 
     validEmails.forEach((index: string) => {
-      const focusOnAtSymbol: number = index.indexOf(".");
-      const isDotIncluded: boolean = focusOnAtSymbol !== -1;
-      if (isDotIncluded) {
-        const isIncluded: string = index.split("@")[1];
-        const focusOnDomain: string = isIncluded.split(".")[0];
-        expect(focusOnDomain.length).toBeGreaterThanOrEqual(minDomainLength);
-      }
+      const isIncluded: string = index.split("@")[1];
+      const focusOnDomain: string = isIncluded.split(".")[0];
+      const validDomainLength: number = focusOnDomain.length 
+      expect(validDomainLength).toBeGreaterThanOrEqual(minDomainLength);
     });
 
     const invalidEmails: string[] = [
@@ -55,19 +54,16 @@ describe("ValidateCharLimit", () => {
     ];
 
     invalidEmails.forEach((index: string) => {
-      const focusOnAtSymbol: number = index.indexOf(".");
-      const isDotIncluded: boolean = focusOnAtSymbol !== -1;
-      if (isDotIncluded) {
-        const isIncluded: string = index.split("@")[1];
-        const focusOnDomain: string = isIncluded.split(".")[0];
-        expect(focusOnDomain.length).toBeLessThanOrEqual(minDomainLength);
-      }
+      const isIncluded: string = index.split("@")[1];
+      const focusOnDomain: string = isIncluded.split(".")[0];
+      const invalidDomainLength: number = focusOnDomain.length 
+      expect(invalidDomainLength).toBeLessThanOrEqual(minDomainLength);
     });
   });
 
   test("validateMaxCharLimit", () => {
-    const maxLength = 320;
-    const validEmails = [
+    const maxLength: number = 320;
+    const validEmails: string[] = [
       "bobross@outlook.com",
       "timbowie@gmail.com",
       "tedsour@hotmail.com",
@@ -75,7 +71,8 @@ describe("ValidateCharLimit", () => {
     ];
 
     validEmails.forEach((index: string) => {
-      expect(index.length).toBeLessThanOrEqual(maxLength);
+      const characterLength: number = index.length 
+      expect(characterLength).toBeLessThanOrEqual(maxLength);
     });
   });
 });
