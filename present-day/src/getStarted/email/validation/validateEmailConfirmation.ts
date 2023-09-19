@@ -7,7 +7,7 @@ import {
   matchingEmails,
 } from "../../getStartedFormIds.js";
 
-const validateEmailConfirmation = () => {
+export const validateEmailConfirmation = () => {
   const isMatching = setEmail.value === confirmEmail.value;
   if (!isMatching) {
     displayErrors(matchingEmails);
@@ -17,5 +17,3 @@ const validateEmailConfirmation = () => {
     removeErrors(matchingEmails);
   }
 };
-
-export default validateEmailConfirmation
