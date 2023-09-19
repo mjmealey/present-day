@@ -1,0 +1,1 @@
+export const signUpPage: string = "http://localhost:5173/src/getStarted/getStarted.html";
