@@ -1,5 +1,5 @@
 import ValidateCharLimit from "./ValidateCharLimit.js";
-import { validatePattern } from "./ValidatePattern.js";
+import { validatePattern } from "./validatePattern.js";
 import { validateEmailConfirmation } from "./validateEmailConfirmation.js";
 
 export const validateEmail = () => {
