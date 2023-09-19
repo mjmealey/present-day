@@ -1,6 +1,5 @@
 import {
-  displayErrors,
-  removeErrors,
+  displayErrors
 } from "../../../formElements/manageErrors.js";
 import { length, errorMessage } from "../../../objects/formState.js";
 import { emailError, setEmail } from "../../getStartedFormIds.js";
@@ -18,10 +17,8 @@ const ValidateCharLimit = () => {
         const underLocalMinLengthError: string =
           errorMessage.underCharacterLimitPreAtSymbol;
         emailError.innerText = underLocalMinLengthError;
-      } else {
-        removeErrors(emailError);
       }
-    }
+    } 
   };
 
   const validateDomainMinCharLimit = () => {
@@ -46,16 +43,19 @@ const ValidateCharLimit = () => {
       displayErrors(emailError);
       const maxLengthError: string = errorMessage.overCharacterLimit;
       emailError.innerText = maxLengthError;
-    } else {
-      removeErrors(emailError);
     }
   };
 
-  setEmail.addEventListener("click", () => {
-    validateLocalMinCharLimit()
+  const charLimit = () => {
+    validateLocalMinCharLimit();
     validateDomainMinCharLimit()
     validateMaxCharLimit()
-  })
+    return charLimit;
+  };
+
+  return {
+    charLimit
+  }
 };
 
 export default ValidateCharLimit;
