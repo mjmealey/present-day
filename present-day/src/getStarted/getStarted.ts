@@ -1,7 +1,16 @@
-import { validateEmail } from "./email/validation/validateEmail.js"
+import { validateEmail } from "./email/validation/validateEmail.js";
+import { setEmail } from "./getStartedFormIds.js";
+import { validateConfirmEmail } from "./email/validation/validateEmail.js";
+import { confirmEmail } from "./getStartedFormIds.js";
 
 const getStarted = () => {
-  validateEmail()
-}
+  setEmail.addEventListener("input", () => {
+    validateEmail();
+  });
 
-getStarted()
+  confirmEmail.addEventListener("input", () => {
+    validateConfirmEmail()
+  })
+};
+
+getStarted();
