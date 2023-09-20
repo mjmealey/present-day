@@ -1,4 +1,4 @@
 export enum ColorValidity {
-    invalid = "red",
-    valid = "green"
+    invalid = "crimson",
+    valid = "lightgreen"
 }
