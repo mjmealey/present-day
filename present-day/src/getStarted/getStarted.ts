@@ -2,16 +2,19 @@ import { validateEmail } from "./email/validation/validateEmail.js";
 import { setEmail } from "./getStartedFormIds.js";
 import { validateConfirmEmail } from "./email/validation/validateEmail.js";
 import { confirmEmail } from "./getStartedFormIds.js";
-import { emailColors } from "./email/colors/emailColors.js";
+import { signUpInputColors } from "./signUpInputColors.js";
+import { emailError } from "./getStartedFormIds.js";
+import { matchingEmails } from "./getStartedFormIds.js";
 
 const getStarted = () => {
-  setEmail.addEventListener("input", () => {
+  setEmail.addEventListener("blur", () => {
     validateEmail();
-    emailColors()
+    signUpInputColors(setEmail, emailError)
   });
 
-  confirmEmail.addEventListener("input", () => {
+  confirmEmail.addEventListener("blur", () => {
     validateConfirmEmail()
+    signUpInputColors(confirmEmail, matchingEmails)
   })
 };
 
