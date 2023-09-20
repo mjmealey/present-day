@@ -1,31 +1,29 @@
 import { test, expect } from "@playwright/test";
+import { signUpPage } from "../variables/urls.js";
+import { setEmailPlaceholder } from "../variables/placeholders.js";
+import { email } from "../variables/patterns.js";
 
+const expectedText: string =
+  "Please enter a valid email address ex: example@gmail.com";
+
+test.beforeEach(async ({ page }) => {
+  page.goto(signUpPage);
+});
 test("should test when a specific email is valid based on input", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/src/getStarted/getStarted.html");
-
-  const pattern: RegExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   const invalidEmail: string = "markjmgm.com";
-  pattern.test(invalidEmail);
-  const placeholder: string = "example@gmail.com";
-  await page.getByPlaceholder(placeholder).fill(invalidEmail);
-  const expectedText: string =
-    "Please enter a valid email address ex: example@gmail.com";
+  email.test(invalidEmail);
+  await page.getByPlaceholder(setEmailPlaceholder).fill(invalidEmail);
   expect(page.getByText(expectedText)).toBeVisible();
 });
 
 test("should test when a valid email is entered based on input", async ({
   page,
 }) => {
-  await page.goto("http://localhost:5173/src/getStarted/getStarted.html");
-
-  const pattern: RegExp = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+  await page.goto(signUpPage);
   const validEmail: string = "bobjames@outlook.com";
-  pattern.test(validEmail);
-  const placeholder: string = "example@gmail.com";
-  await page.getByPlaceholder(placeholder).fill(validEmail);
-  const expectedText: string =
-    "Please enter a valid email address ex: example@gmail.com";
+  email.test(validEmail);
+  await page.getByPlaceholder(setEmailPlaceholder).fill(validEmail);
   expect(page.getByText(expectedText)).not.toBeVisible();
 });
