@@ -115,12 +115,9 @@ body {
   flex-direction: $flexColumn;
   position: $secondaryPositioning;
   justify-content: $centerContent;
-  background-color: $mainColor;
   padding: 100px;
   border-radius: 20px;
   bottom: 35%;
-  border-style: $primaryBorderStyle;
-  border-color: $mainColor;
   font-family: $formFont;
   align-items: $centerContent;
   left: 35%;
@@ -153,7 +150,7 @@ body {
   position: $primaryPositioning;
   top: 1.1rem;
   left: 1rem;
-  font-weight: lighter;
+  font-weight:bolder;
 }
 
 .input {
@@ -163,13 +160,18 @@ body {
   left: 1rem;
 }
 
+.input:focus {
+  outline: none;
+  border-color:#005073;
+  border-style: solid;
+}
+
 .feedback {
   position:relative;
   left: 1rem;
   color: red;
   display:none;
 }
-
 #setPassword {
   position: $primaryPositioning;
 }
