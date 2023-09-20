@@ -1,9 +1,15 @@
 import { EmailErrorMessages } from "../enums/ErrorMessages.js";
 import { EmailLength } from "../enums/FormElementsLength.js";
+import { ColorValidity } from "../enums/ColorValidity.js";
 
 interface FormState {
   noErrors: string;
   emptyField: string;
+
+  colors: {
+    invalid: string;
+    valid: string;
+  };
   email: {
     errorMessages: {
       invalidPattern: string;
@@ -25,6 +31,11 @@ interface FormState {
 export const formState: FormState = {
   noErrors: "",
   emptyField: "",
+
+  colors: {
+    invalid: ColorValidity.invalid,
+    valid: ColorValidity.valid,
+  },
   email: {
     errorMessages: {
       invalidPattern: EmailErrorMessages.invalidPattern,
@@ -32,7 +43,8 @@ export const formState: FormState = {
       overCharacterLimit: EmailErrorMessages.overCharacterLimit,
       underCharacterLimitPreAtSymbol:
         EmailErrorMessages.underCharacterLimitPreAtSymbol,
-        underCharacterLimitForDomain: EmailErrorMessages.underCharacterLimitForDomain,
+      underCharacterLimitForDomain:
+        EmailErrorMessages.underCharacterLimitForDomain,
       doesNotMatch: EmailErrorMessages.doesNotMatch,
     },
 
@@ -44,6 +56,6 @@ export const formState: FormState = {
   },
 };
 
-export const length = formState.email.length
-export const errorMessage = formState.email.errorMessages
-
+export const length = formState.email.length;
+export const errorMessage = formState.email.errorMessages;
+export const colors = formState.colors
