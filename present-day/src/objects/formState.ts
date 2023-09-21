@@ -13,7 +13,6 @@ interface FormState {
   email: {
     errorMessages: {
       invalidPattern: string;
-      emptyField: string;
       overCharacterLimit: string;
       underCharacterLimitPreAtSymbol: string;
       underCharacterLimitForDomain: string;
@@ -39,7 +38,6 @@ export const formState: FormState = {
   email: {
     errorMessages: {
       invalidPattern: EmailErrorMessages.invalidPattern,
-      emptyField: EmailErrorMessages.emptyField,
       overCharacterLimit: EmailErrorMessages.overCharacterLimit,
       underCharacterLimitPreAtSymbol:
         EmailErrorMessages.underCharacterLimitPreAtSymbol,
