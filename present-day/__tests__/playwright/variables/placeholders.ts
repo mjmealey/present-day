@@ -1,2 +1,2 @@
 export const setEmailPlaceholder: string = "example@gmail.com"
-export const confirmEmailPlaceholder: string = "matching the first email"
+export const confirmEmailPlaceholder: string = "matches the first email"
