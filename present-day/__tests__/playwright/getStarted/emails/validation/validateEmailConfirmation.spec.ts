@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { signUpPage } from "../../variables/urls.js";
-import { confirmEmailPlaceholder } from "../../../playwright/variables/placeholders.js";
-import { setEmailPlaceholder } from "../../../playwright/variables/placeholders.js";
+import { signUpPage } from "../../../variables/urls.js";
+import { confirmEmailPlaceholder } from "../../../../playwright/variables/placeholders.js";
+import { setEmailPlaceholder } from "../../../../playwright/variables/placeholders.js";
 
 const emailConfirmMismatchError: string = "These emails do not match";
 
@@ -15,7 +15,7 @@ test("should check that both email fields do not match", async ({ page }) => {
 
   await page.getByPlaceholder(setEmailPlaceholder).fill(firstEmail);
   await page.getByPlaceholder(confirmEmailPlaceholder).fill(secondEmail);
-
+  await page.getByPlaceholder(confirmEmailPlaceholder).blur()
   expect(page.getByText(emailConfirmMismatchError)).toBeVisible();
 });
 
@@ -25,6 +25,7 @@ test("should check that both email fields match", async ({ page }) => {
 
   await page.getByPlaceholder(setEmailPlaceholder).fill(firstEmail);
   await page.getByPlaceholder(confirmEmailPlaceholder).fill(secondEmail);
+  await page.getByPlaceholder(confirmEmailPlaceholder).blur()
 
   expect(page.getByText(emailConfirmMismatchError)).not.toBeVisible();
 });

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { signUpPage } from "../../variables/urls.js";
-import { setEmailPlaceholder } from "../../variables/placeholders.js";
+import { signUpPage } from "../../../variables/urls.js";
+import { setEmailPlaceholder } from "../../../variables/placeholders.js";
 
 test.beforeEach(async ({ page }) => {
   await page.goto(signUpPage);
