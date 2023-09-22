@@ -17,9 +17,23 @@ test("add a light green border color to the setEmail input if there is a valid i
 }) => {
   const validEmail: string = "bobjames@gmail.com";
   await page.getByPlaceholder(setEmailPlaceholder).fill(validEmail);
-  await page.getByPlaceholder(setEmailPlaceholder).blur()
-  const setEmailInput: Locator = page.locator(setEmail)
-  expect(await setEmailInput.evaluate((email) => email.style.borderColor)).toBe(validColor)  
+  await page.getByPlaceholder(setEmailPlaceholder).blur();
+  const setEmailInput: Locator = page.locator(setEmail);
+  expect(await setEmailInput.evaluate((email) => email.style.borderColor)).toBe(
+    validColor
+  );
 });
 
-test("add a light green border to the confirmEmail input if there is a correct input based on a matching email", () => {})
+test("add a light green border to the confirmEmail input if there is a correct input based on a matching email", async ({
+  page,
+}) => {
+  const matchingEmail: string = "billyjoe@gmail.com";
+
+  await page.getByPlaceholder(setEmailPlaceholder).fill(matchingEmail);
+  await page.getByPlaceholder(confirmEmailPlaceholder).fill(matchingEmail);
+  await page.getByPlaceholder(confirmEmailPlaceholder).blur();
+  const confirmEmailInput: Locator = page.locator(confirmEmail);
+  expect(
+    await confirmEmailInput.evaluate((email) => email.style.borderColor)
+  ).toBe(validColor);
+});
