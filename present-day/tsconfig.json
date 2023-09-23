@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "module":"esnext",
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "typeRoots": ["./types", "./node_modules/@types"],
+    "types": ["node", "jest"],
+    "esModuleInterop": true,
     /* Bundler mode */
     "isolatedModules": true,
     "outDir": "dist",
-    
+    "declaration": true,
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "types": ["node"],
     "noFallthroughCasesInSwitch": true
   },
   "include": ["./src"]
